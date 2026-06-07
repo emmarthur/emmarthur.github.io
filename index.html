@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Character set and mobile-friendly viewport -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Short summary for search engines -->
     <meta
       name="description"
       content="Personal website of Emmanuel Arthur, software engineer and computer science student."
     />
     <title>Emmanuel Arthur | Personal Website</title>
+    <!-- Bootstrap (CDN) then our custom styles -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -15,7 +18,10 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <!-- Accessibility: first focusable element; jumps to #main-content -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Top of page: site navigation -->
     <header>
       <nav
         class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top"
@@ -23,6 +29,7 @@
       >
         <div class="container">
           <a class="navbar-brand fw-semibold" href="#home">Emmanuel Arthur</a>
+          <!-- Hamburger menu (needs Bootstrap JS to toggle) -->
           <button
             class="navbar-toggler"
             type="button"
@@ -58,5 +65,171 @@
         </div>
       </nav>
     </header>
+
+    <!-- Primary page content (all sections live here) -->
+    <main id="main-content">
+      <!-- Home / hero: first thing visitors see -->
+      <section
+        id="home"
+        class="bg-dark text-white"
+        aria-labelledby="home-heading"
+      >
+        <div class="container text-center py-5">
+          <h1 id="home-heading">Emmanuel Arthur</h1>
+          <p class="lead">
+            Software engineer and MS Computer Science student building web
+            applications, cloud systems, and data tools.
+          </p>
+          <a class="btn btn-light btn-lg" href="#about">Learn more about me</a>
+        </div>
+      </section>
+
+      <!-- About: photo + bio -->
+      <section
+        id="about"
+        class="container py-5"
+        aria-labelledby="about-heading"
+      >
+        <header class="mb-4">
+          <h2 id="about-heading">About</h2>
+        </header>
+        <div class="row align-items-center g-4">
+          <div class="col-md-4 text-center">
+            <figure class="mb-0">
+              <img
+                src="images/1683647827149.jpg"
+                alt="Portrait of Emmanuel Arthur"
+                class="img-fluid rounded-circle"
+                width="280"
+                height="280"
+              />
+            </figure>
+          </div>
+          <div class="col-md-8">
+            <article>
+              <p>
+                I am a software engineer with experience at BlackRock in
+                observability and internal tooling. I build reliable backend
+                systems, data workflows, and full stack applications with a
+                focus on clear design and maintainable code.
+              </p>
+              <p>
+                I earned a BA in Computer Science from Reed College and I am
+                completing an MS in Computer Science at Portland State
+                University. I am especially interested in web development, cloud
+                engineering, and applied machine learning.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Previous Work: jobs and education in an accordion -->
+      <section
+        id="previous-work"
+        class="bg-light py-5"
+        aria-labelledby="previous-work-heading"
+      >
+        <div class="container">
+          <header class="mb-4">
+            <h2 id="previous-work-heading">Previous Work</h2>
+            <p class="text-muted">
+              Professional experience and education. Click each row to expand
+              details.
+            </p>
+          </header>
+
+          <div class="accordion" id="workAccordion">
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="heading-blackrock-obs">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse-blackrock-obs"
+                  aria-expanded="true"
+                  aria-controls="collapse-blackrock-obs"
+                >
+                  BlackRock, Analyst, Aladdin Engineering (Observability)
+                </button>
+              </h3>
+              <div
+                id="collapse-blackrock-obs"
+                class="accordion-collapse collapse show"
+                aria-labelledby="heading-blackrock-obs"
+                data-bs-parent="#workAccordion"
+              >
+                <div class="accordion-body">
+                  May 2024 to July 2025. Built Java and Spring MVC tooling and
+                  JavaScript utilities for observability workflows. Contributed
+                  to ServiceNow inventory automation and mentored junior
+                  engineers.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="heading-blackrock-support">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse-blackrock-support"
+                  aria-expanded="false"
+                  aria-controls="collapse-blackrock-support"
+                >
+                  BlackRock, Analyst, Technology Support
+                </button>
+              </h3>
+              <div
+                id="collapse-blackrock-support"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading-blackrock-support"
+                data-bs-parent="#workAccordion"
+              >
+                <div class="accordion-body">
+                  May 2023 to April 2024. Resolved production issues, managed
+                  VDI imaging and provisioning, and improved ServiceNow and
+                  Teams support processes.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="heading-education">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse-education"
+                  aria-expanded="false"
+                  aria-controls="collapse-education"
+                >
+                  Education
+                </button>
+              </h3>
+              <div
+                id="collapse-education"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading-education"
+                data-bs-parent="#workAccordion"
+              >
+                <div class="accordion-body">
+                  <p>
+                    MS, Computer Science, Portland State University (2025 to
+                    2027), GPA 3.8
+                  </p>
+                  <p>BA, Computer Science, Reed College (2018 to 2022)</p>
+                  <p>
+                    BlackRock Kaggle Data Science Competition, Winning Team
+                    (2024)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
