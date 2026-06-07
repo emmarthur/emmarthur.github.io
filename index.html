@@ -230,6 +230,200 @@
           </div>
         </div>
       </section>
+
+      <!-- Projects: outside-course work (carousel and cards added next) -->
+      <section
+        id="projects"
+        class="container py-5"
+        aria-labelledby="projects-heading"
+      >
+        <header class="text-center mb-4">
+          <h2 id="projects-heading">Projects</h2>
+          <p class="text-muted col-lg-8 mx-auto">
+            Selected work from outside this course. Each project includes a
+            description and links to the repository and deployed site when
+            available.
+          </p>
+        </header>
+
+        <!-- Carousel: three project highlight slides -->
+        <div
+          id="projectCarousel"
+          class="carousel slide mb-4"
+          data-bs-ride="carousel"
+          aria-label="Project highlights carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#projectCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#projectCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#projectCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner" id="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="https://picsum.photos/seed/retailimpact/900/400"
+                class="d-block w-100"
+                alt="Retail Impact Simulator"
+                height="400"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h3>Retail Impact Simulator</h3>
+                <p>
+                  Cloud native microservices on GCP Cloud Run with external API
+                  integrations and multi agent orchestration.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://picsum.photos/seed/staincheck/900/400"
+                class="d-block w-100"
+                alt="StainCheck Mobile App"
+                height="400"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h3>StainCheck Mobile App</h3>
+                <p>
+                  Cross platform mobile app built with Expo and React Native for
+                  stain and surface analysis workflows.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://picsum.photos/seed/websecurity/900/400"
+                class="d-block w-100"
+                alt="Web Security Exploitation Suite"
+                height="400"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h3>Web Security Exploitation Suite</h3>
+                <p>
+                  Python scripts for web cache deception attack labs and
+                  security testing practice.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#projectCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#projectCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <!-- Project cards: same three projects in a grid -->
+        <div
+          id="project-cards"
+          class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"
+        >
+          <div class="col">
+            <article class="card h-100 shadow-sm">
+              <img
+                src="https://picsum.photos/seed/retailimpact/900/400"
+                class="card-img-top"
+                alt="Retail Impact Simulator preview"
+              />
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5">Retail Impact Simulator</h3>
+                <p class="card-text text-muted small flex-grow-1">
+                  Cloud native microservices application on GCP Cloud Run with
+                  external API integrations and multi agent orchestration.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-2">
+                  <a
+                    href="https://github.com/emmarthur"
+                    class="btn btn-primary btn-sm"
+                    target="_blank"
+                    rel="noreferrer"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100 shadow-sm">
+              <img
+                src="https://picsum.photos/seed/staincheck/900/400"
+                class="card-img-top"
+                alt="StainCheck Mobile App preview"
+              />
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5">StainCheck Mobile App</h3>
+                <p class="card-text text-muted small flex-grow-1">
+                  Cross platform mobile application built with Expo and React
+                  Native for stain and surface analysis workflows.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-2">
+                  <a
+                    href="https://github.com/emmarthur"
+                    class="btn btn-primary btn-sm"
+                    target="_blank"
+                    rel="noreferrer"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100 shadow-sm">
+              <img
+                src="https://picsum.photos/seed/websecurity/900/400"
+                class="card-img-top"
+                alt="Web Security Exploitation Suite preview"
+              />
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5">Web Security Exploitation Suite</h3>
+                <p class="card-text text-muted small flex-grow-1">
+                  Python scripts for web cache deception attack labs and
+                  security testing practice.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-2">
+                  <a
+                    href="https://github.com/emmarthur"
+                    class="btn btn-primary btn-sm"
+                    target="_blank"
+                    rel="noreferrer"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
