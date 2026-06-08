@@ -22,9 +22,9 @@
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- Top of page: site navigation -->
-    <header>
+    <header class="sticky-top">
       <nav
-        class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top"
+        class="navbar navbar-expand-lg navbar-dark bg-dark"
         aria-label="Primary"
       >
         <div class="container">
@@ -424,6 +424,108 @@
           </div>
         </div>
       </section>
+
+      <!-- Contact: form to send a message -->
+      <section
+        id="contact"
+        class="bg-light py-5"
+        aria-labelledby="contact-heading"
+      >
+        <div class="container">
+          <header class="mb-4">
+            <h2 id="contact-heading">Contact</h2>
+            <p class="text-muted">
+              Send a message using the form below. This form follows the same
+              field and label patterns from our HTML and Bootstrap exercises.
+            </p>
+          </header>
+
+          <form
+            id="contact-form"
+            class="col-lg-8 mx-auto"
+            action="#"
+            method="post"
+            novalidate
+          >
+            <div class="mb-3">
+              <label for="contact-name" class="form-label">Full name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="contact-name"
+                name="fullname"
+                required
+              />
+              <div class="invalid-feedback" id="name-error"></div>
+            </div>
+            <div class="mb-3">
+              <label for="contact-email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="contact-email"
+                name="email"
+                required
+              />
+              <div class="invalid-feedback" id="email-error"></div>
+            </div>
+            <fieldset class="mb-3">
+              <legend class="form-label fs-6">Reason for contacting</legend>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="reason"
+                  id="reason-collab"
+                  value="collaboration"
+                  checked
+                />
+                <label class="form-check-label" for="reason-collab"
+                  >Collaboration</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="reason"
+                  id="reason-jobs"
+                  value="job opportunity"
+                />
+                <label class="form-check-label" for="reason-jobs"
+                  >Job opportunity</label
+                >
+              </div>
+            </fieldset>
+            <div class="mb-3">
+              <label for="contact-message" class="form-label">Message</label>
+              <textarea
+                class="form-control"
+                id="contact-message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
+              <div class="invalid-feedback" id="message-error"></div>
+            </div>
+            <button type="submit" class="btn btn-primary">Send message</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+          </form>
+
+          <aside
+            id="form-feedback"
+            class="col-lg-8 mx-auto mt-3 alert"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></aside>
+        </div>
+      </section>
     </main>
+
+    <!-- Bootstrap JS: navbar toggle, accordion, carousel -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Site JS: form validation, nav highlight -->
+    <script src="js/main.js"></script>
   </body>
 </html>
