@@ -19,6 +19,73 @@ Re-run WAVE after pulling these changes to confirm.
 
 ---
 
+## 3. Contrast errors (2) — Hero section text on gradient
+
+### What WAVE reported
+
+Two **contrast errors** on the home/hero section: the `<h1>` and/or `.lead` intro paragraph (`"Software engineer and MS Computer Science student..."`).
+
+### Cause
+
+WAVE treats text on a **CSS gradient** like text on a background image. Its docs state that text over gradients must have a **solid `background-color` defined** on the text (or its wrapper)—not just `color: white` on a transparent background. Darkening the gradient alone does not satisfy WAVE’s checker.
+
+### Fix
+
+1. Wrapped hero content in a `.hero-panel` div.
+2. Set solid background `#003838` on the panel **and** on `h1` / `.lead` (white `#ffffff` on `#003838` exceeds 4.5:1).
+
+```css
+#home .hero-panel {
+  background-color: #003838;
+  color: #ffffff;
+  ...
+}
+
+#home .hero-panel h1,
+#home .hero-panel .lead {
+  background-color: #003838;
+  color: #ffffff;
+}
+```
+
+### Files changed
+
+- `index.html` — added `.hero-panel` wrapper
+- `css/styles.css`
+
+---
+
+## 4. Alerts (2) — Redundant link to About
+
+### What WAVE reported
+
+Two **redundant link** alerts for links both targeting `#about`.
+
+### Cause
+
+The hero **"Learn more about me"** button (`<a href="#about">`) duplicated the navbar **About** link to the same section.
+
+### Fix
+
+Changed the hero CTA from an anchor to a **button** that scrolls to `#about` via JavaScript (no duplicate link):
+
+```html
+<button type="button" class="btn btn-light btn-lg" id="hero-about-btn">
+  Learn more about me
+</button>
+```
+
+Scroll logic added in `js/main.js`.
+
+**Update:** Three project cards also linked to the same `https://github.com/emmarthur` URL, causing additional redundant-link alerts. Each card now uses a distinct repo path.
+
+### Files changed
+
+- `index.html`
+- `js/main.js`
+
+---
+
 ## 1. Contrast errors (6) — Very low contrast
 
 ### What WAVE reported

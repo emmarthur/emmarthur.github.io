@@ -133,4 +133,16 @@ if (contactForm) {
   contactForm.addEventListener("submit", handleContactSubmit);
 }
 
+const heroAboutBtn = document.querySelector("#hero-about-btn");
+if (heroAboutBtn) {
+  heroAboutBtn.addEventListener("click", () => {
+    const aboutSection = document.querySelector("#about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState(null, "", "#about");
+      updateNavHighlight();
+    }
+  });
+}
+
 updateNavHighlight();
