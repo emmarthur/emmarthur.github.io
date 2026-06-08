@@ -36,10 +36,24 @@ section[id] {
 /* Brand navbar (overrides Bootstrap bg-dark) */
 .navbar.bg-dark {
   background-color: var(--teal) !important;
+  --bs-navbar-color: #ffffff;
+  --bs-navbar-hover-color: #ffffff;
+  --bs-navbar-active-color: #ffffff;
+  --bs-navbar-disabled-color: rgba(255, 255, 255, 0.75);
+  --bs-navbar-brand-color: #ffffff;
+  --bs-navbar-brand-hover-color: #ffffff;
 }
 
-.navbar .nav-link.active {
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-nav .nav-link {
+  color: #ffffff;
+}
+
+.navbar .nav-link.active,
+.navbar-brand.active,
+.navbar-brand[aria-current="page"] {
   font-weight: 700;
+  color: #ffffff;
 }
 
 /* Home hero gradient */

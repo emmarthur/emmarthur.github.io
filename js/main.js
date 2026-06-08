@@ -4,6 +4,7 @@
  */
 
 const navLinks = document.querySelectorAll(".navbar .nav-link");
+const navBrand = document.querySelector(".navbar-brand");
 const contactForm = document.querySelector("#contact-form");
 const formFeedback = document.querySelector("#form-feedback");
 
@@ -19,6 +20,16 @@ function updateNavHighlight() {
       link.removeAttribute("aria-current");
     }
   });
+
+  if (navBrand) {
+    const isHome = currentHash === "#home";
+    navBrand.classList.toggle("active", isHome);
+    if (isHome) {
+      navBrand.setAttribute("aria-current", "page");
+    } else {
+      navBrand.removeAttribute("aria-current");
+    }
+  }
 }
 
 function isValidEmail(value) {
@@ -109,6 +120,12 @@ navLinks.forEach((link) => {
     window.setTimeout(updateNavHighlight, 0);
   });
 });
+
+if (navBrand) {
+  navBrand.addEventListener("click", () => {
+    window.setTimeout(updateNavHighlight, 0);
+  });
+}
 
 window.addEventListener("hashchange", updateNavHighlight);
 
