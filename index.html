@@ -18,9 +18,6 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <!-- Accessibility: first focusable element; jumps to #main-content -->
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-
     <!-- Top of page: site navigation -->
     <header class="sticky-top">
       <nav
@@ -124,7 +121,7 @@
         </div>
       </section>
 
-      <!-- Previous Work: jobs and education in an accordion -->
+      <!-- BEYOND CLASS: Bootstrap accordion (not in lab notebook — Final Project additional requirement) -->
       <section
         id="previous-work"
         class="bg-light py-5"
@@ -246,7 +243,7 @@
           </p>
         </header>
 
-        <!-- Carousel: three project highlight slides -->
+        <!-- BEYOND CLASS: Bootstrap carousel (not in lab notebook — Final Project additional requirement) -->
         <div
           id="projectCarousel"
           class="carousel slide mb-4"
@@ -278,7 +275,7 @@
           <div class="carousel-inner" id="carousel-inner">
             <div class="carousel-item active">
               <img
-                src="https://picsum.photos/seed/retailimpact/900/400"
+                src="images/retail-impact.jpg"
                 class="d-block w-100"
                 alt="Retail Impact Simulator"
                 height="400"
@@ -293,7 +290,7 @@
             </div>
             <div class="carousel-item">
               <img
-                src="https://picsum.photos/seed/staincheck/900/400"
+                src="images/staincheck.jpg"
                 class="d-block w-100"
                 alt="StainCheck Mobile App"
                 height="400"
@@ -308,7 +305,7 @@
             </div>
             <div class="carousel-item">
               <img
-                src="https://picsum.photos/seed/websecurity/900/400"
+                src="images/web-security.jpg"
                 class="d-block w-100"
                 alt="Web Security Exploitation Suite"
                 height="400"
@@ -350,7 +347,7 @@
           <div class="col">
             <article class="card h-100 shadow-sm">
               <img
-                src="https://picsum.photos/seed/retailimpact/900/400"
+                src="images/retail-impact.jpg"
                 class="card-img-top"
                 alt="Retail Impact Simulator preview"
               />
@@ -375,7 +372,7 @@
           <div class="col">
             <article class="card h-100 shadow-sm">
               <img
-                src="https://picsum.photos/seed/staincheck/900/400"
+                src="images/staincheck.jpg"
                 class="card-img-top"
                 alt="StainCheck Mobile App preview"
               />
@@ -400,7 +397,7 @@
           <div class="col">
             <article class="card h-100 shadow-sm">
               <img
-                src="https://picsum.photos/seed/websecurity/900/400"
+                src="images/web-security.jpg"
                 class="card-img-top"
                 alt="Web Security Exploitation Suite preview"
               />
@@ -425,7 +422,7 @@
         </div>
       </section>
 
-      <!-- Contact: form to send a message -->
+      <!-- Contact: form markup from class patterns; custom validation logic in js/main.js -->
       <section
         id="contact"
         class="bg-light py-5"
@@ -440,6 +437,7 @@
             </p>
           </header>
 
+          <!-- General JS requirement: novalidate + invalid-feedback hooks for main.js validation -->
           <form
             id="contact-form"
             class="col-lg-8 mx-auto"
@@ -523,9 +521,29 @@
       </section>
     </main>
 
-    <!-- Bootstrap JS: navbar toggle, accordion, carousel -->
+    <!-- Site footer -->
+    <footer class="site-footer py-4">
+      <div class="container text-center">
+        <p class="mb-0">
+          <small
+            >&copy; <time datetime="2026">2026</time> Emmanuel Arthur. CS
+            463/563 Final Project.</small
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- jQuery (CDN) -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap JS: enables BEYOND CLASS accordion + carousel, and navbar collapse -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Site JS: form validation, nav highlight -->
+    <!-- General JS requirement: custom form validation + navbar active-state (see js/main.js) -->
     <script src="js/main.js"></script>
+    <!-- jQuery interactions: section highlight on nav click -->
+    <script src="js/jquery-interactions.js"></script>
   </body>
 </html>
