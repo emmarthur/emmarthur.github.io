@@ -1,4 +1,4 @@
-﻿# Build Steps: emmarthur.github.io
+# Build Steps: emmarthur.github.io
 
 Tiny steps I used to rebuild the final project website from scratch. I implemented each step in order. Commits happen at planned checkpoints (6+ meaningful commits total).
 
@@ -152,6 +152,8 @@ I use the **carousel** as my main beyond-class explanation in the **video** (`CA
 
 **Check:** Open the file in a browser. Expected: a blank white page, and the tab title "Emmanuel Arthur | Personal Website".
 
+**If removed:** Without the HTML skeleton, the browser may enter quirks mode. Missing `charset` can garble text. Missing `viewport` makes the layout look zoomed out on phones. Without `<title>`, the tab shows a file path instead of a site name.
+
 ---
 
 ## Step 2: Link Bootstrap and custom CSS
@@ -185,6 +187,8 @@ Leave `css/styles.css` empty for now. The links still work; there is just nothin
 
 **Check:** Reload the page. It should still look blank. Open DevTools (F12) > Network tab and confirm both CSS files load without red errors.
 
+**If removed:** Without the Bootstrap CSS link, navbar, grid, cards, and forms lose Bootstrap layout and styling. Without the `styles.css` link, custom colors, the hero panel, carousel caption styling, and WAVE contrast fixes never load.
+
 ---
 
 ## Step 3: Meta description
@@ -214,6 +218,8 @@ Leave `css/styles.css` empty for now. The links still work; there is just nothin
 | `content="..."`                 | The actual summary   | The sentence that describes the site. Keep it simple and honest.                          |
 
 **Check:** Reload the page. View page source and confirm the meta description is inside `<head>`.
+
+**If removed:** Without the meta description, search engines may show a generic snippet instead of a summary. The visible page still loads normally.
 
 ---
 
@@ -286,6 +292,8 @@ Leave `css/styles.css` empty for now. The links still work; there is just nothin
 
 **Check:** Reload the page. Expected: a dark bar with my name and four nav links (no Home link). Resize narrow - the links hide behind a hamburger (opens after Bootstrap JS). This completes **Commit 2** when ready to commit.
 
+**If removed:** Without the navbar, there is no way to jump between sections and the required navigation bar is missing. Without `sticky-top` on `<header>`, the nav scrolls away with the page until custom CSS adds scroll offsets.
+
 ---
 
 ## Step 5: Main content and Home hero
@@ -333,6 +341,8 @@ Leave `css/styles.css` empty for now. The links still work; there is just nothin
 | `button#hero-about-btn`          | Hero button           | Not an anchor - `main.js` handles smooth scroll to `#about`.                     |
 
 **Check:** Reload the page. Expected: my name and intro below the navbar. Click the brand name - it should scroll to this section.
+
+**If removed:** Without `<main id="main-content">`, the primary content landmark is missing. Without `#home`, the brand link has no section to open and the hero introduction disappears.
 
 ---
 
@@ -394,6 +404,8 @@ Leave `css/styles.css` empty for now. The links still work; there is just nothin
 | `<article>`                       | Bio text block   | Wraps my bio paragraphs.                                                                 |
 
 **Check:** Reload the page. Click **About** in the nav - the page should jump to this section. Portrait file: `images/1683647827149.jpg`.
+
+**If removed:** Without `#about`, the About nav link and hero button target break. The required photo and bio section is gone.
 
 ---
 
@@ -470,6 +482,8 @@ Leave `css/styles.css` empty for now. The links still work; there is just nothin
 
 **Check:** Reload the page. Expected: three accordion rows; first panel open by default. Headers animate after Bootstrap JS in Step 12. This completes **Commit 3** (steps 5-7) when ready.
 
+**If removed:** Without the accordion, Previous Work becomes one long block of text. Without `data-bs-toggle` and `data-bs-parent`, panels would not expand even after Bootstrap JS loads. The beyond-class accordion requirement would not be met.
+
 ---
 
 ## Step 8: Projects section header
@@ -510,6 +524,8 @@ Leave `css/styles.css` empty for now. The links still work; there is just nothin
 | Intro paragraph                      | Context text     | Explains these are non-course projects with repo links coming in the cards. |
 
 **Check:** Reload and click **Projects** in the nav - the page should jump to the heading and intro.
+
+**If removed:** Without the Projects section header, the `#projects` nav link lands on an empty area. The carousel and cards in Steps 9-10 have no parent section.
 
 ---
 
@@ -605,6 +621,8 @@ flowchart TB
 | `visually-hidden`                 | Screen reader text | Hides "Previous"/"Next" visually but keeps them for accessibility.   |
 
 **Check:** Reload the page. The carousel area may look empty until Step 10 adds slides. Controls animate after Bootstrap JS in Step 12.
+
+**If removed:** Without `#projectCarousel`, indicator dots and arrow buttons have no slideshow to control. The beyond-class carousel structure is missing even if cards remain below.
 
 ---
 
@@ -728,6 +746,8 @@ flowchart LR
 
 **Check:** Reload the page. Expected: three carousel images with captions and three cards below. Carousel arrows and dots work after Bootstrap JS in Step 12. This completes **Commit 4** (steps 8-10) when ready.
 
+**If removed:** Without carousel slides, the slideshow is empty but arrows may still appear. Without project cards, GitHub links and project detail text disappear while the carousel could still rotate images only.
+
 ---
 
 ## Step 11: Contact section and form
@@ -847,6 +867,8 @@ flowchart LR
 
 **Check:** Reload and click **Contact** in the nav. Fill out the form - the page will not validate yet until Step 13 adds JavaScript.
 
+**If removed:** Without the contact form, the required Contact section is missing. Without `novalidate`, the browser shows its own validation popups instead of custom messages from `main.js`.
+
 ---
 
 ## Step 12: Bootstrap JavaScript
@@ -886,6 +908,8 @@ flowchart LR
 | Bottom of `<body>`        | Load order          | Page content appears before JS runs, which is faster for visitors.               |
 
 **Check:** Reload the page. Narrow the window - the hamburger menu should open and close. Accordion headers should expand/collapse. Carousel arrows and dots should change slides.
+
+**If removed:** Without `bootstrap.bundle.min.js`, the mobile menu, accordion panels, and carousel slides do not respond to clicks. The page looks correct but interactive Bootstrap parts are dead.
 
 ---
 
@@ -1004,6 +1028,8 @@ updateNavHighlight();
 | Message   | At least 10 characters                           |
 
 **Check:** Reload, go to Contact, and submit empty fields - error messages appear. With valid data, a green success alert shows. This completes **Commit 5** (steps 11-13) when ready to commit.
+
+**If removed:** Without `main.js`, the form may reload the page on submit, navbar links lose active highlighting, and the hero button no longer smooth-scrolls to About. Custom validation and the success alert in `#form-feedback` stop working.
 
 ---
 
@@ -1135,6 +1161,8 @@ textarea:focus-visible {
 
 **Check:** Reload - navbar is teal, hero has gradient + panel, carousel captions are readable, section links scroll without hiding under the nav, focus outlines appear when tabbing.
 
+**If removed:** Without `css/styles.css`, the site falls back to default Bootstrap colors. Navbar links may fail WAVE contrast, the hero loses the `.hero-panel`, carousel captions become hard to read, and keyboard focus outlines disappear.
+
 ---
 
 ## Step 15: README, jQuery (`js/jquery-interactions.js`), footer, deploy
@@ -1222,7 +1250,34 @@ Updates: git push origin main (rebuilds in ~1-2 minutes; no build command)
 
 **Check:** Reload locally - footer at bottom, click a nav link and watch the target section flash orange briefly. After push, open https://emmarthur.github.io/ and confirm the live site matches. This completes **Commit 6**.
 
+**If removed:** Without the footer, the copyright block is gone but the rest of the site works. Without jQuery and `jquery-interactions.js`, the orange section flash on nav clicks stops. Loading `main.js` before Bootstrap would break components that depend on Bootstrap loading first.
+
 ---
+
+
+## What breaks if code is removed (overview)
+
+This table summarizes how the live page is affected when major pieces are deleted. Details appear under each build step above.
+
+| Removed piece | What breaks on the page |
+| ------------- | ----------------------- |
+| HTML skeleton (Step 1) | Wrong encoding, bad mobile scaling, blank or broken document |
+| Bootstrap CSS (Step 2) | No grid, navbar, card, or form styling |
+| `css/styles.css` (Step 14) | Teal theme, hero panel, readable carousel captions, WAVE contrast fixes, focus outlines |
+| Navbar (Step 4) | No section navigation; missing project requirement |
+| `#home` hero (Step 5) | No landing section; brand link target missing |
+| About section (Step 6) | Required section and photo missing; `#about` links fail |
+| Accordion (Step 7) | Long static Previous Work list; no beyond-class accordion |
+| Projects shell (Step 8) | `#projects` nav target empty |
+| Carousel HTML (Steps 9-10) | No slideshow; beyond-class carousel gone |
+| Project cards (Step 10) | No GitHub links or scannable project detail |
+| Contact form (Step 11) | Required contact section missing |
+| `bootstrap.bundle.min.js` (Step 12) | Hamburger, accordion, and carousel clicks do nothing |
+| `main.js` (Step 13) | No custom form validation or nav active state |
+| jQuery scripts (Step 15) | No section highlight flash on nav clicks |
+| `images/` files | Broken image icons in About and Projects |
+| CDN offline | Bootstrap and jQuery fail to load; plain unstyled HTML |
+
 
 ## All build steps complete
 

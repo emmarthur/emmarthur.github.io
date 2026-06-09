@@ -233,6 +233,29 @@ Full video timing and demo steps: `VIDEO-PRESENTATION-OUTLINE.md` Section 3.
 
 ---
 
+## What breaks if carousel parts are removed
+
+Each layer of the carousel depends on the others. Removing one piece changes behavior on the Projects section.
+
+| Removed piece | Effect on the page |
+| ------------- | ------------------ |
+| Entire `#projectCarousel` block | No slideshow; beyond-class carousel requirement is not met. Project cards below may still show GitHub links. |
+| `id="projectCarousel"` | Indicator dots and arrows lose their `data-bs-target`; clicks no longer control any carousel. |
+| `class="carousel slide"` | Bootstrap does not treat the element as a carousel; slides may all show at once or layout breaks. |
+| `data-bs-ride="carousel"` | Carousel may not auto-initialize on load; first slide might stay static until a control is clicked (behavior varies by Bootstrap version). |
+| `carousel-indicators` (all three dots) | Dots disappear; only prev/next arrows can change slides. |
+| One indicator button | That slide index cannot be jumped to from the dots; arrows may still reach it. |
+| `carousel-inner` or all `carousel-item` divs | Empty slideshow; arrows and dots have nothing to switch. |
+| `active` on the first slide | No slide visible on load, or Bootstrap picks an arbitrary first slide. |
+| Slide images or `images/` files | Broken image icon inside that slide; caption may still show. |
+| `carousel-caption` or `d-none d-md-block` | Captions always show (including on phones) or never show, depending on which class is removed. |
+| `carousel-control-prev` / `next` | One direction of navigation missing; dots may still work. |
+| `bootstrap.bundle.min.js` | Arrows, dots, and `data-bs-ride` do nothing; carousel looks like a static image stack. Accordion and mobile navbar also stop working. |
+| `#projectCarousel` rules in `css/styles.css` | Carousel may span full monitor width, images stretch unevenly, or caption text becomes hard to read on bright photos. |
+| Project cards below carousel | GitHub links and scannable project detail disappear; carousel images alone remain. |
+
+---
+
 ## Outside source
 
 - [Bootstrap 5.3 - Carousel component](https://getbootstrap.com/docs/5.3/components/carousel/)

@@ -166,3 +166,19 @@ Screen reader users would hear two links to the same place in the same navigatio
 - Mention that WAVE is required for the final project accessibility check (5 points).
 - Contrast fix: custom theme colors must be re-checked when overriding Bootstrap defaults.
 - Redundant link fix: avoid duplicate links to the same URL in the same navigation block.
+
+---
+
+## What breaks if these fixes are removed
+
+Reverting a fix restores the original WAVE finding and may change how the page behaves for visitors and screen reader users.
+
+| Reverted fix | Effect on the page / WAVE |
+| ------------ | ------------------------- |
+| Navbar link colors (`#ffffff` on teal in `css/styles.css`) | Inactive nav links return to semi-transparent white; WAVE reports contrast errors on About, Previous Work, Projects, and Contact. |
+| Removal of duplicate Home nav link | Navbar brand and a separate Home link both target `#home`; WAVE reports redundant link alerts. |
+| Hero CTA changed back to `<a href="#about">` | Two links to `#about` in the same page region (navbar About + hero link); redundant link alerts return unless one is removed. |
+| Distinct GitHub URLs on project cards | Multiple cards pointing to the same URL can trigger redundant link alerts again. |
+| `.hero-panel` wrapper and solid `#003838` background | Hero `h1` and `.lead` sit directly on the CSS gradient; WAVE may still report contrast errors (two remain on the deployed site even with the panel). |
+| `updateNavHighlight()` brand logic in `main.js` | Brand may not show `aria-current="page"` on home; screen readers lose the current-page cue when hash is `#home`. |
+| `hero-about-btn` scroll in `main.js` | Hero button would need to be an anchor again to reach About, which risks duplicating the About nav link. |

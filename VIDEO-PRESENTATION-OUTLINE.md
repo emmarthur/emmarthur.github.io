@@ -264,3 +264,23 @@ Go through commits **in order**. For each: **what changed to why to one snippet 
 1. Split screen: IDE on carousel code + browser on Projects section
 2. Quiet room; speak slowly - 12 minutes max
 3. Practice once with a timer; shorten Commit 1 and later doc commits if running long
+
+---
+
+## What breaks if code is removed (talking points)
+
+These notes support the commit walkthrough and carousel deep dive. They describe how the live page degrades when major pieces are deleted, without re-reading every file on camera.
+
+| Removed piece | What to say in the video |
+| ------------- | ------------------------ |
+| Bootstrap CSS CDN | Navbar, grid, cards, and forms lose Bootstrap layout; the page looks like unstyled HTML. |
+| `css/styles.css` | Teal theme, hero panel, carousel caption backgrounds, navbar contrast fixes, and orange focus outlines disappear. |
+| `bootstrap.bundle.min.js` | Carousel arrows and dots, accordion panels, and the mobile hamburger stop responding to clicks. |
+| `#projectCarousel` HTML | The beyond-class slideshow is gone; only static project cards might remain. |
+| `main.js` | Contact form validation and success alert stop; navbar active highlighting and hero scroll button stop. |
+| `jquery-interactions.js` | Orange section flash on nav clicks stops; everything else still works. |
+| WAVE fixes (navbar white links, no duplicate Home link, hero button) | Contrast errors or redundant-link alerts return in WAVE; see `WAVE-AUDIT-FIXES.md`. |
+| `.hero-panel` CSS | Hero heading and intro may fail contrast checks against the gradient background. |
+| `images/` files | Broken images in About and carousel slides. |
+
+Full step-by-step impact: `BUILD-STEPS.md` (**If removed** under each step). Carousel-specific table: `CAROUSEL-DEEP-DIVE.md`.
