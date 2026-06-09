@@ -93,18 +93,21 @@ main h2 {
   padding-left: 1.25rem;
 }
 
-/* Projects carousel */
+/* BEYOND CLASS: Projects carousel custom styles (pairs with #projectCarousel in index.html) */
+/* Limit carousel width and center it on the page */
 #projectCarousel {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* Crop slide images to a consistent height without stretching */
 #projectCarousel .carousel-item img {
   max-height: 400px;
   object-fit: cover;
 }
 
+/* Semi-transparent dark box behind caption text for readability over photos */
 #projectCarousel .carousel-caption {
   background: rgba(0, 0, 0, 0.55);
   border-radius: 6px;

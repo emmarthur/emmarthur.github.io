@@ -248,14 +248,18 @@
           </p>
         </header>
 
-        <!-- BEYOND CLASS: Bootstrap carousel (not in lab notebook — Final Project additional requirement) -->
+        <!-- BEYOND CLASS: Bootstrap carousel — explain this block in the video (see VIDEO-PRESENTATION-OUTLINE.md Section 3) -->
+        <!-- Outer wrapper: unique id so indicators, arrows, and Bootstrap JS all target the same carousel -->
+        <!-- class carousel slide = Bootstrap slideshow; mb-4 = margin below; data-bs-ride initializes on JS load -->
         <div
           id="projectCarousel"
           class="carousel slide mb-4"
           data-bs-ride="carousel"
           aria-label="Project highlights carousel"
         >
+          <!-- Row of dot buttons — one per slide; sits below the images -->
           <div class="carousel-indicators">
+            <!-- Dot for slide 1 (index 0): active + aria-current mark the starting slide -->
             <button
               type="button"
               data-bs-target="#projectCarousel"
@@ -264,12 +268,14 @@
               aria-current="true"
               aria-label="Slide 1"
             ></button>
+            <!-- Dot for slide 2 (index 1) -->
             <button
               type="button"
               data-bs-target="#projectCarousel"
               data-bs-slide-to="1"
               aria-label="Slide 2"
             ></button>
+            <!-- Dot for slide 3 (index 2) -->
             <button
               type="button"
               data-bs-target="#projectCarousel"
@@ -277,14 +283,18 @@
               aria-label="Slide 3"
             ></button>
           </div>
+          <!-- Holds all slides; only one carousel-item is visible at a time -->
           <div class="carousel-inner" id="carousel-inner">
+            <!-- Slide 1: carousel-item = one slide; active = shown on page load -->
             <div class="carousel-item active">
+              <!-- d-block w-100 = full-width block image; alt text describes the project -->
               <img
                 src="images/retail-impact.jpg"
                 class="d-block w-100"
                 alt="Retail Impact Simulator"
                 height="400"
               />
+              <!-- Caption overlay: hidden on small screens (d-none d-md-block), styled in css/styles.css -->
               <div class="carousel-caption d-none d-md-block">
                 <h3>Retail Impact Simulator</h3>
                 <p>
@@ -293,6 +303,7 @@
                 </p>
               </div>
             </div>
+            <!-- Slide 2: no active class — hidden until user clicks next or a dot -->
             <div class="carousel-item">
               <img
                 src="images/staincheck.jpg"
@@ -308,6 +319,7 @@
                 </p>
               </div>
             </div>
+            <!-- Slide 3 -->
             <div class="carousel-item">
               <img
                 src="images/web-security.jpg"
@@ -324,15 +336,19 @@
               </div>
             </div>
           </div>
+          <!-- Left arrow: data-bs-slide="prev" moves to the previous carousel-item -->
           <button
             class="carousel-control-prev"
             type="button"
             data-bs-target="#projectCarousel"
             data-bs-slide="prev"
           >
+            <!-- Decorative arrow icon; aria-hidden hides it from screen readers -->
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <!-- visually-hidden text is read by screen readers instead of the icon -->
             <span class="visually-hidden">Previous</span>
           </button>
+          <!-- Right arrow: data-bs-slide="next" moves to the next carousel-item -->
           <button
             class="carousel-control-next"
             type="button"
@@ -544,7 +560,8 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
-    <!-- Bootstrap JS: enables BEYOND CLASS accordion + carousel, and navbar collapse -->
+    <!-- BEYOND CLASS: Bootstrap JS bundle — powers #projectCarousel (no custom JS needed for slides) -->
+    <!-- bootstrap.bundle.min.js reads data-bs-* attributes on the carousel and wires indicators/arrows -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- General JS requirement: custom form validation + navbar active-state (see js/main.js) -->
     <script src="js/main.js"></script>
