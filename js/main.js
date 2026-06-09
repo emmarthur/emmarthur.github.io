@@ -1,13 +1,19 @@
 /**
- * emmarthur.github.io - main JavaScript
- * Contact form validation and navbar active-state updates
+ * emmarthur.github.io — main.js
+ * I wrote this file for contact form validation, navbar active-state updates,
+ * and smooth scroll from the hero button to the About section.
  */
 
+// I cache DOM references once so I do not query the document on every event.
 const navLinks = document.querySelectorAll(".navbar .nav-link");
 const navBrand = document.querySelector(".navbar-brand");
 const contactForm = document.querySelector("#contact-form");
 const formFeedback = document.querySelector("#form-feedback");
 
+/**
+ * I highlight whichever nav link matches the current section hash.
+ * I also set aria-current on the brand when the hash is #home (no separate Home link).
+ */
 function updateNavHighlight() {
   const currentHash = window.location.hash || "#home";
 
@@ -32,10 +38,12 @@ function updateNavHighlight() {
   }
 }
 
+/** I use a simple regex to check for a basic email shape (name@domain.tld). */
 function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+/** I add Bootstrap is-invalid and fill the matching invalid-feedback div. */
 function showFieldError(fieldId, errorId, message) {
   const field = document.querySelector(fieldId);
   const error = document.querySelector(errorId);
@@ -43,6 +51,7 @@ function showFieldError(fieldId, errorId, message) {
   error.textContent = message;
 }
 
+/** I reset all field errors before each validation run. */
 function clearFieldErrors() {
   contactForm.querySelectorAll(".form-control").forEach((field) => {
     field.classList.remove("is-invalid");
@@ -55,6 +64,10 @@ function clearFieldErrors() {
   });
 }
 
+/**
+ * I validate name, email, and message per my project rules.
+ * Returns true only when all three fields pass.
+ */
 function validateContactForm() {
   clearFieldErrors();
 
@@ -67,7 +80,7 @@ function validateContactForm() {
     showFieldError(
       "#contact-name",
       "#name-error",
-      "Please enter your full name.",
+      "Please enter a full name (at least 2 characters).",
     );
     isValid = false;
   }
@@ -93,6 +106,10 @@ function validateContactForm() {
   return isValid;
 }
 
+/**
+ * I handle form submit: prevent reload, validate, then show success or errors.
+ * I use FormData to read field values by their name attributes.
+ */
 function handleContactSubmit(event) {
   event.preventDefault();
 
@@ -109,12 +126,13 @@ function handleContactSubmit(event) {
   formFeedback.hidden = false;
   formFeedback.classList.remove("alert-danger");
   formFeedback.classList.add("alert-success");
-  formFeedback.textContent = `Thank you, ${name}. Your ${reason} message was received at ${email}. This demo form does not send email yet.`;
+  formFeedback.textContent = `Thank you, ${name}. The ${reason} message was received at ${email}. This demo form does not send email yet.`;
 
   contactForm.reset();
   clearFieldErrors();
 }
 
+// I update nav highlight after each nav link click (hash may change on next tick).
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     window.setTimeout(updateNavHighlight, 0);
@@ -127,12 +145,17 @@ if (navBrand) {
   });
 }
 
+// I sync nav highlight when the URL hash changes (e.g. back/forward or in-page links).
 window.addEventListener("hashchange", updateNavHighlight);
 
 if (contactForm) {
   contactForm.addEventListener("submit", handleContactSubmit);
 }
 
+/**
+ * I scroll to #about from the hero button instead of using a duplicate anchor link.
+ * This avoids WAVE redundant-link alerts (nav already has an About link).
+ */
 const heroAboutBtn = document.querySelector("#hero-about-btn");
 if (heroAboutBtn) {
   heroAboutBtn.addEventListener("click", () => {
@@ -145,4 +168,5 @@ if (heroAboutBtn) {
   });
 }
 
+// I set the correct active state on first load (default #home).
 updateNavHighlight();

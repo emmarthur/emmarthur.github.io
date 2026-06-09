@@ -1,6 +1,6 @@
 # emmarthur.github.io
 
-Professional one-page portfolio for CS 463/563 Web Development. Built with HTML, CSS, Bootstrap, JavaScript, and jQuery.
+Professional one-page portfolio for CS 463/563 Web Development. I built it with HTML, CSS, Bootstrap, JavaScript, and jQuery.
 
 ## Project links
 
@@ -23,12 +23,12 @@ No download, clone, or setup needed.
 
 ### Option 2 — Run from a local folder (no Git, no VS Code)
 
-If you already have the project files (USB, email, Canvas download, copied folder, etc.):
+With a local copy of the project files (USB, email, Canvas download, copied folder, etc.):
 
-1. Open the project folder on your computer (`emmarthur.github.io/`).
+1. Open the project folder (`emmarthur.github.io/`).
 2. Double-click **`index.html`**, or right-click it → **Open with** → Chrome, Edge, Firefox, or Safari.
 
-The page loads Bootstrap and jQuery from the internet (CDN), so you need an **internet connection** for full styling and interactivity. Keep the folder structure intact — `css/`, `js/`, and `images/` must stay next to `index.html`.
+Bootstrap and jQuery load from CDN links in the HTML. An **internet connection** is required for full styling and interactivity. Keep the folder structure intact — `css/`, `js/`, and `images/` must stay next to `index.html`.
 
 ### Option 3 — Clone from GitHub (optional)
 
@@ -37,11 +37,11 @@ git clone https://github.com/emmarthur/emmarthur.github.io.git
 cd emmarthur.github.io
 ```
 
-Then use Option 2: open `index.html` in a browser. Cloning is only needed if you want version history or to push changes.
+Then open `index.html` in a browser (Option 2). Cloning is optional for version history or pushing changes.
 
 ### Option 4 — VS Code + Live Server (optional, for development)
 
-If you use VS Code, install the **Live Server** extension and open `index.html` with **Open with Live Server**. This auto-refreshes when you edit files. It is **not** required to view or grade the site.
+VS Code with the **Live Server** extension can open `index.html` with auto-refresh while editing. Not required to view or grade the site.
 
 ### Requirements
 
@@ -65,22 +65,22 @@ emmarthur.github.io/
 
 ## Deployment (GitHub Pages)
 
-This site is hosted on **GitHub Pages** from the public repo `emmarthur/emmarthur.github.io`.
+I host this site on **GitHub Pages** from the public repo `emmarthur/emmarthur.github.io`.
 
 **Live URL:** https://emmarthur.github.io/
 
 ### First-time setup (already configured)
 
-1. Create a **public** repository named `<username>.github.io` (for this project: `emmarthur.github.io`).
+1. Create a **public** repository named `<username>.github.io` (this project: `emmarthur.github.io`).
 2. Push project files to the **`main`** branch.
-3. On GitHub: open the repo → **Settings** → **Pages** (under “Code and automation”).
+3. On GitHub: open the repo → **Settings** → **Pages**.
 4. Under **Build and deployment** → **Source**, choose **Deploy from a branch**.
 5. Set **Branch** to **`main`**, folder **`/ (root)`**, then click **Save**.
 6. After one to two minutes, the site is live at `https://<username>.github.io/` (here: https://emmarthur.github.io/).
 
 ### Updating the live site
 
-1. Edit files locally and commit: `git add .` → `git commit -m "your message"`.
+1. Edit files locally and commit: `git add .` → `git commit -m "message"`.
 2. Push to GitHub: `git push origin main`.
 3. GitHub Pages rebuilds automatically — refresh the live URL to see changes.
 
@@ -101,10 +101,11 @@ There is no separate build or deploy command; GitHub serves `index.html` and sta
 
 - One-page layout: Navbar, About, Previous Work, Projects, Contact
 - Bootstrap accordion (Previous Work) and carousel (Projects) — beyond lab notebook
+- Carousel deep-dive write-up: `CAROUSEL-DEEP-DIVE.md`
 - Custom contact form validation in `main.js`
 - jQuery section highlight on navbar clicks in `jquery-interactions.js`
 
 ## Accessibility and quality checks
 
-- Run [WAVE](https://wave.webaim.org/) on the deployed site before submitting.
-- Run Prettier on HTML, CSS, and JavaScript files.
+- [WAVE](https://wave.webaim.org/) audit on the deployed site
+- Prettier on HTML, CSS, and JavaScript files

@@ -4,169 +4,222 @@
 **Site:** emmarthur.github.io personal portfolio  
 **Length:** 10–12 minutes (**hard max: 12 minutes**)
 
-Use this outline while recording. The instructions require you to **describe your code contributions** and **walk through your commits**. Show code in your editor or GitHub; demo the live site where it helps.
+I use this outline while recording. The assignment requires me to **describe my code contributions** and **walk through my commits**. I show code in the editor or on GitHub and demo the live site where it helps.
+
+**Deep-dive reference:** `CAROUSEL-DEEP-DIVE.md` (beyond-class carousel — main focus for Section 3)
 
 ---
 
-## Before you record
+## Before recording — checklist
 
 - [ ] Repo is public: `https://github.com/emmarthur/emmarthur.github.io`
-- [ ] Site is deployed (GitHub Pages URL ready to paste/show)
+- [ ] Site is deployed: `https://emmarthur.github.io/`
 - [ ] Git log open (`git log --oneline --reverse`)
-- [ ] `index.html`, `js/main.js`, and `css/styles.css` open in editor
-- [ ] Browser open to the deployed site (desktop + narrow window for mobile)
+- [ ] Tabs open: `index.html` at `#projectCarousel`, `css/styles.css`, `CAROUSEL-DEEP-DIVE.md`
+- [ ] Browser on deployed site (desktop + narrow window for mobile)
+- [ ] WAVE extension ready
 
-**Opening line (say both URLs):**
+**Opening line (say both URLs clearly):**
 
-> “This is Emmanuel Arthur’s final project—a one-page portfolio site. Repo: [GitHub URL]. Live site: [deployed URL].”
+> “This is Emmanuel Arthur’s CS 463 final project — a one-page portfolio site. The GitHub repo is https://github.com/emmarthur/emmarthur.github.io and the live site is https://emmarthur.github.io/.”
 
 ---
 
 ## Time budget
 
-| Section                              | Minutes    | Purpose                                   |
-| ------------------------------------ | ---------- | ----------------------------------------- |
-| 1. Intro + project overview          | ~1:00      | Context and requirements met              |
-| 2. Commit walkthrough                | ~7:00      | **Main requirement** — code contributions |
-| 3. Beyond-class features (deep dive) | ~2:00      | Accordion + carousel                      |
-| 4. Live demo + accessibility/JS      | ~1:30      | Show it working                           |
-| 5. Wrap-up                           | ~0:30      | Sources, what you’d improve               |
-| **Total**                            | **~12:00** | Stay at or under 12 minutes               |
+| Section                     | Minutes    | Purpose                               |
+| --------------------------- | ---------- | ------------------------------------- |
+| 1. Intro + project overview | ~1:00      | Context and requirements met          |
+| 2. Commit walkthrough       | ~5:30      | Main requirement — code contributions |
+| 3. Carousel deep dive       | ~3:00      | Beyond-class feature in detail        |
+| 4. Live demo + WAVE         | ~1:30      | Show it working + accessibility audit |
+| 5. Wrap-up                  | ~0:30      | Sources and closing                   |
+| **Total**                   | **~12:00** | Stay at or under 12 minutes           |
+
+```mermaid
+pie title Video time split
+  "Intro" : 1
+  "Commits" : 5.5
+  "Carousel deep dive" : 3
+  "Demo + WAVE" : 1.5
+  "Wrap-up" : 0.5
+```
 
 ---
 
 ## Section 1 — Intro (~1 minute)
 
-**Say:**
+### What to say
 
-1. **What the site is** — One-page professional portfolio (navbar, About, Previous Work, Projects, Contact).
-2. **Tech stack** — HTML5, CSS, JavaScript, Bootstrap 5.3.3 (CDN). No React/other frameworks.
-3. **Structure** — Single `index.html`, `css/styles.css`, `js/main.js`, `images/`.
-4. **How many commits** — At least 6 meaningful commits with descriptive messages.
+> “I built a single-page professional portfolio with five areas: Home, About, Previous Work, Projects, and Contact. Everything lives in one `index.html` file plus `css/styles.css`, `js/main.js`, and `js/jquery-interactions.js`.
+>
+> The tech stack is HTML5, CSS, Bootstrap 5.3 from a CDN, vanilla JavaScript, and jQuery — no React or other frameworks.
+>
+> I made more than six meaningful git commits with descriptive messages, deployed the site on GitHub Pages, and added Bootstrap components beyond what the lab notebook covered — especially the carousel in Projects, which I’ll explain in detail later.”
 
-**Show:** Deployed homepage briefly (full viewport).
+### What to show
 
----
-
-## Section 2 — Commit walkthrough (~7 minutes)
-
-Go through commits **in order**. For each: **what changed → why → 1 file or snippet to show**.
-
-### Commit 1 — `Initial commit: empty starter files for personal website repo`
-
-**Talk about:**
-
-- Project skeleton: folder layout (`css/`, `js/`, `images/`)
-- Empty `index.html`, `styles.css`, `main.js` placeholders
-- Why start with structure before content
-
-**Show:** Repo file tree or first commit diff.
+- Deployed homepage (full viewport)
+- Quick scroll through all five sections
 
 ---
 
-### Commit 2 — `Link stylesheets and add navbar`
+## Section 2 — Commit walkthrough (~5.5 minutes)
 
-**Talk about:**
+Go through commits **in order**. For each: **what changed → why → one snippet or demo**.
 
-- HTML5 doctype, `lang`, charset, viewport meta
-- Meta description (SEO)
-- **Skip link** — first element in `<body>`; jumps to `#main-content` (Accessibility unit — from class, not “beyond class”)
-- Bootstrap CSS CDN + link to `css/styles.css`
-- `<header class="sticky-top">` with Bootstrap navbar
-- One-page nav: `#home`, `#about`, `#previous-work`, `#projects`, `#contact`
-- Navbar toggler for mobile (`data-bs-toggle`, `data-bs-target`)
-
-**Show:** `<head>` links and navbar block in `index.html`. Mention `DESIGN-CHANGES.md` if you moved `sticky-top` to `<header>`.
-
----
-
-### Commit 3 — `Add About and Previous Work sections`
-
-**Talk about:**
-
-- `<main id="main-content">` — skip link target
-- **Home** hero section (`#home`)
-- **About** — photo (`images/1683647827149.jpg`), bio, Bootstrap grid (`row` / `col-md-4` / `col-md-8`)
-- **Previous Work** — `#previous-work` section
-
-**Show:** About section markup; accordion opening tag.
-
----
-
-### Commits 4 & 5 — `Add Projects section and carousel`
-
-_(You have two commits with this message—briefly note both or treat as one logical chunk.)_
-
-**Talk about:**
-
-- Projects section header + intro (2–3 outside-course projects, not homework)
-- **Project cards** — Bootstrap cards with title, description, GitHub link
-- Three projects: Retail Impact Simulator, StainCheck, Web Security Suite
-
-**Show:** One project card and section heading.
-
----
-
-### Commit 6 — `Add contact form validation in main.js`
-
-**Talk about:**
-
-- Contact section: labeled form (name, email, radio fieldset, message)
-- `novalidate` on form — browser validation off so **your** JS runs
-- `invalid-feedback` divs for custom errors
-- **`js/main.js`** — `validateContactForm()`, email regex, `is-invalid` classes
-- Submit handler: `preventDefault()`, success message in `#form-feedback`
-- Bonus: navbar `active` state on hash change
-- Bootstrap JS bundle at bottom — powers accordion, carousel, navbar collapse
-
-**Show:** `handleContactSubmit` and validation rules in `main.js`. Submit empty form in browser to show errors.
-
----
-
-## Section 3 — Beyond-class features (~2 minutes)
-
-**Instructions ask for elements not covered in the lab notebook. Your two main examples:**
-
-### Bootstrap accordion (Previous Work)
+### Commit 1 — Initial starter files
 
 **Say:**
 
-- Not in lab notebook; learned from Bootstrap docs
-- `#workAccordion` with three panels (two jobs + education)
-- `data-bs-parent="#workAccordion"` — only one panel open at a time
-- `accordion-button`, `collapse show` vs `collapsed`
+> “I started with folder structure: `css/`, `js/`, `images/`, and empty placeholder files. Starting with structure before content made later steps easier.”
 
-**Show:** Previous Work section in code (`<!-- BEYOND CLASS: Bootstrap accordion -->`). Expand/collapse live.
-
-### Bootstrap carousel (Projects)
-
-**Say:**
-
-- Also not in lab notebook
-- `#projectCarousel` — indicators, `carousel-inner`, prev/next controls
-- Three slides matching the three project cards
-- Requires Bootstrap JS (Step 12)
-
-**Show:** Carousel HTML comment and live slide change.
-
-**Optional one-liner:** Skip link = class accessibility work; custom form validation = general JS requirement (not the same as accordion/carousel).
+**Show:** GitHub file tree or `git show` for first commit.
 
 ---
 
-## Section 4 — Live demo (~1.5 minutes)
+### Commit 2 — Stylesheets and navbar
 
-Quick pass on the **deployed site** (don’t re-read code):
+**Say:**
 
-| Action                  | What it proves                  |
-| ----------------------- | ------------------------------- |
-| Tab once                | Skip link appears / focus moves |
-| Click each nav link     | One-page scroll to sections     |
-| Narrow browser          | Hamburger menu works            |
-| Previous Work           | Accordion opens/closes          |
-| Projects                | Carousel arrows/dots work       |
-| Contact → Submit empty  | Custom validation errors        |
-| Contact → Valid submit  | Green success alert             |
-| Resize desktop ↔ mobile | Responsive layout               |
+> “I added the HTML5 skeleton — doctype, charset, viewport meta, and a meta description for search engines. I linked Bootstrap CSS from jsDelivr and my `styles.css` file.
+>
+> I built the navbar inside a sticky `<header>` with links to `#home`, `#about`, `#previous-work`, `#projects`, and `#contact`. The navbar toggler is there for mobile; it needs Bootstrap JavaScript later to open.”
+
+**Show:** `<head>` links and navbar in `index.html`.
+
+---
+
+### Commit 3 — About and Previous Work
+
+**Say:**
+
+> “I wrapped all content in `<main id="main-content">` and added a Home hero section. About has my photo and bio in a Bootstrap grid.
+>
+> Previous Work uses a Bootstrap **accordion** — that’s beyond class too, but my main deep dive is the carousel. The accordion has three panels for my BlackRock roles and education.”
+
+**Show:** About section; one accordion header in code.
+
+---
+
+### Commits 4 & 5 — Projects section and carousel
+
+**Say:**
+
+> “I added the Projects section with three outside-course projects — not homework. I built the carousel shell first, then added three slides and the project cards below.
+>
+> I’ll walk through every part of the carousel in Section 3 — for now I’ll note it lives at `#projectCarousel` in `index.html`.”
+
+**Show:** Projects heading; jump to carousel block (do not read every line yet).
+
+---
+
+### Commit 6 — Contact form validation
+
+**Say:**
+
+> “The Contact section has a labeled form with `novalidate` so my JavaScript controls errors instead of the browser defaults. In `main.js` I validate name length, email format, and message length. On success I show a teal alert in `#form-feedback`.
+>
+> I also update which nav link looks active when the URL hash changes, and the hero button scrolls to About without duplicating the About link — that helped with WAVE.”
+
+**Show:** `validateContactForm` and `handleContactSubmit` in `main.js`. Submit empty form live.
+
+---
+
+### Later commits (30 seconds total)
+
+**Say:**
+
+> “Later commits added custom CSS, the footer, jQuery section highlight, README, project images, build documentation, and WAVE accessibility fixes for navbar contrast and redundant links.”
+
+**Show:** `git log --oneline` only.
+
+---
+
+## Section 3 — Carousel deep dive (~3 minutes)
+
+**Use `CAROUSEL-DEEP-DIVE.md` as the script.** Cover HTML → CSS → Bootstrap JS.
+
+### Opening (15 seconds)
+
+**Say:**
+
+> “The assignment asks for Bootstrap elements we didn’t learn in the lab notebook. I used an accordion and a **carousel**. I’m going to explain the carousel line by line — it’s in the Projects section at `#projectCarousel`.”
+
+### Part A — HTML structure (1 minute)
+
+**Say:**
+
+> “The outer `div` has id `projectCarousel` and classes `carousel slide`. The attribute `data-bs-ride='carousel'` tells Bootstrap to initialize it when the JS file loads.
+>
+> Inside I have three indicator dots — they use `data-bs-slide-to` with values 0, 1, and 2 because Bootstrap counts from zero. The first dot is `active` because slide one shows on load.
+>
+> The `carousel-inner` holds three `carousel-item` divs. Only the first has `active`. Each slide has an image from my `images/` folder and a `carousel-caption` with the project title and description.
+>
+> Left and right arrows use `data-bs-slide='prev'` and `'next'`. Screen readers get ‘Previous’ and ‘Next’ from `visually-hidden` spans.”
+
+**Show:** Scroll through carousel HTML in `index.html`. Click arrows and dots on live site while naming each part.
+
+### Part B — Custom CSS (45 seconds)
+
+**Say:**
+
+> “Bootstrap handles the basic slideshow look. I added three rules in `styles.css`: max-width 900 pixels and centered margins, `max-height` and `object-fit: cover` on images so slides stay the same height, and a semi-transparent dark background on captions so white text stays readable on photos.
+>
+> The class `d-none d-md-block` on captions hides text on phones — only the image shows on small screens.”
+
+**Show:** `#projectCarousel` rules in `css/styles.css`. Resize browser to show captions hiding.
+
+### Part C — JavaScript (45 seconds)
+
+**Say:**
+
+> “There is no carousel code in `main.js`. Bootstrap’s `bootstrap.bundle.min.js` at the bottom of `index.html` reads the `data-bs-target` and `data-bs-slide` attributes and wires up the slideshow. Same script powers the accordion and the mobile navbar.”
+
+**Show:** Bootstrap `<script>` tag at bottom of `index.html`.
+
+### Part D — Why cards below (15 seconds)
+
+**Say:**
+
+> “The carousel highlights projects visually. The Bootstrap cards below show the same three projects with GitHub links — carousel for the beyond-class component, cards for scannable detail.”
+
+**Show:** Cards grid under carousel.
+
+### Accordion — one sentence only
+
+**Say:**
+
+> “The Previous Work accordion uses the same Bootstrap JS pattern with `data-bs-toggle='collapse'` — same idea, different component.”
+
+---
+
+## Section 4 — Live demo + WAVE (~1.5 minutes)
+
+### Quick demo table
+
+| Action                              | What it proves                   |
+| ----------------------------------- | -------------------------------- |
+| Projects → carousel arrows and dots | Bootstrap JS + my HTML           |
+| Narrow browser                      | Captions hide; slides still work |
+| Previous Work accordion             | Bootstrap collapse               |
+| Contact → submit empty              | `main.js` validation             |
+| Contact → valid submit              | Success alert styling            |
+| Tab through navbar                  | Orange focus outlines in CSS     |
+
+### WAVE audit — what to say
+
+**Run WAVE on https://emmarthur.github.io/.**
+
+**Say:**
+
+> “I ran WAVE on the deployed site as required. My first audit had six navbar contrast errors and two redundant Home links. I fixed those — full white links on teal, removed the duplicate Home nav item, changed the hero CTA to a button, and gave each project a distinct GitHub URL.
+>
+> After fixes I had zero alerts and zero errors, but **two contrast errors remain** on the hero heading and intro paragraph. WAVE is strict about text on CSS gradients. I added a `.hero-panel` with solid background `#003838` behind the text, which passes a manual contrast check, but WAVE still flags those two elements.
+>
+> I went from eight findings down to two and documented what’s left honestly in my journal.”
+
+**Optional show:** `.hero-panel` in `css/styles.css`; WebAIM contrast checker with white on `#003838`.
 
 ---
 
@@ -174,57 +227,40 @@ Quick pass on the **deployed site** (don’t re-read code):
 
 **Say:**
 
-1. **Outside sources** — Bootstrap 5.3 docs (CDN CSS + JS), picsum.photos placeholders, any tutorials (list in README when done).
-2. **Checks you care about** — Semantic HTML, labels on form fields, alt text on images, formatted code (Prettier).
-3. **Still to do** (if not finished) — Custom CSS in `styles.css` (skip-link styling), README, final deploy polish, journal PDF.
-
-**Closing:**
-
-> “That covers my code contributions and commits for this project. Journal and links are in Canvas. Thanks.”
+> “Main outside sources: Bootstrap 5.3 documentation for the carousel and accordion, jsDelivr CDN, Unsplash for project images, and WAVE for accessibility testing.
+>
+> The site is deployed at emmarthur.github.io with at least six commits, custom CSS and JavaScript, and the carousel as my beyond-class deep dive. My journal PDF and links are submitted on Canvas. Thanks for watching.”
 
 ---
 
-## Checklist vs. grading (mention if time)
+## Grading checklist (mention if time)
 
-| Requirement          | Where on your site           |
-| -------------------- | ---------------------------- |
-| Navbar               | `<header>` + `.navbar`       |
-| About + photo        | `#about`                     |
-| Previous Work        | `#previous-work` + accordion |
-| 2–3 outside projects | `#projects` cards + carousel |
-| Contact form         | `#contact` + `#contact-form` |
-| CSS file             | `css/styles.css`             |
-| JS interactivity     | `js/main.js` (30+ lines)     |
-| Beyond class         | Accordion + carousel         |
-| 6+ commits           | Git log                      |
-| Deploy + README      | GitHub Pages + `README.md`   |
+| Requirement          | Where on my site                                 |
+| -------------------- | ------------------------------------------------ |
+| Navbar               | `<header>` + `.navbar`                           |
+| About + photo        | `#about`                                         |
+| Previous Work        | `#previous-work` + accordion                     |
+| 2–3 outside projects | `#projects` cards + carousel                     |
+| Contact form         | `#contact` + `#main.js` validation               |
+| CSS file             | `css/styles.css`                                 |
+| JS interactivity     | `js/main.js`                                     |
+| Beyond class (video) | `#projectCarousel` — see `CAROUSEL-DEEP-DIVE.md` |
+| 6+ commits           | Git log                                          |
+| Deploy + README      | GitHub Pages + `README.md`                       |
 
 ---
 
 ## What NOT to spend time on
 
-- Reading every line of HTML aloud
-- Long biography content (summarize sections exist)
-- Apologizing for placeholder GitHub links or picsum images (note you’ll swap for real URLs)
-- jQuery (only mention if you add `jquery-interactions.js` in Step 15)
+- Reading every line of the accordion aloud
+- Long biography text
+- Apologizing for the two remaining WAVE contrast errors — explain them clearly instead
+- jQuery (one line: orange flash on nav click in `jquery-interactions.js`)
 
 ---
 
-## Journal vs. video
+## Recording setup
 
-| Journal (PDF)                | Video                       |
-| ---------------------------- | --------------------------- |
-| Session-by-session build log | Commit-focused walkthrough  |
-| Issues and fixes in detail   | Show code + quick demo      |
-| All outside source links     | Say main sources aloud      |
-| Reproducible steps           | **Show** repo and live site |
-
-Use the video to go **deeper on commits** that are thin in the journal.
-
----
-
-## Suggested recording setup
-
-1. Screen: split GitHub commits + browser, or switch between IDE and site.
-2. Mic: quiet room; speak slowly—you have 12 minutes max.
-3. Practice once with a timer; cut Section 2 if you run long (shorten Commits 1 and 4/5 duplicate).
+1. Split screen: IDE on carousel code + browser on Projects section
+2. Quiet room; speak slowly — 12 minutes max
+3. Practice once with a timer; shorten Commit 1 and later doc commits if running long

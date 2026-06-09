@@ -1,5 +1,7 @@
-/* emmarthur.github.io — custom site styles */
+/* emmarthur.github.io — custom site styles (css/styles.css) */
+/* I use this file for brand colors, layout polish, WAVE contrast fixes, and accessibility focus styles. */
 
+/* I defined a palette here so I can reuse colors across the whole site. */
 :root {
   --white: #fcfcfc;
   --gray1: #333333;
@@ -12,14 +14,17 @@
   --section-alt: #f0f4f8;
 }
 
+/* I apply border-box globally so padding does not break my width calculations. */
 * {
   box-sizing: border-box;
 }
 
+/* I enabled smooth scrolling for navbar hash links and the hero About button. */
 html {
   scroll-behavior: smooth;
 }
 
+/* I set base typography and page background. */
 body {
   margin: 0;
   font-family: "Segoe UI", "Helvetica Neue", sans-serif;
@@ -28,12 +33,15 @@ body {
   background-color: var(--white);
 }
 
-/* Sticky navbar: section links land below the header */
+/* I offset section scroll targets so headings are not hidden under the sticky navbar. */
 section[id] {
   scroll-margin-top: 4.5rem;
 }
 
-/* Brand navbar (overrides Bootstrap bg-dark) */
+/*
+ * I overrode Bootstrap navbar-dark defaults for WAVE contrast on my teal background.
+ * Bootstrap uses semi-transparent white links; I forced full white (#ffffff).
+ */
 .navbar.bg-dark {
   background-color: var(--teal) !important;
   --bs-navbar-color: #ffffff;
@@ -49,6 +57,7 @@ section[id] {
   color: #ffffff;
 }
 
+/* I bold the active nav link and brand when aria-current="page" is set from main.js. */
 .navbar .nav-link.active,
 .navbar-brand.active,
 .navbar-brand[aria-current="page"] {
@@ -56,7 +65,10 @@ section[id] {
   color: #ffffff;
 }
 
-/* Home hero: gradient behind a solid panel (WAVE needs defined text background) */
+/*
+ * I styled the hero with a gradient section background and a solid panel for text.
+ * WAVE flags text on gradients; I added .hero-panel with #003838 behind h1 and .lead.
+ */
 #home {
   background: linear-gradient(135deg, var(--teal), #3d2f6e) !important;
 }
@@ -77,12 +89,12 @@ section[id] {
   color: #ffffff;
 }
 
-/* Section headings */
+/* I colored all main section h2 headings with my teal brand color. */
 main h2 {
   color: var(--teal);
 }
 
-/* About portrait */
+/* I added a teal border around the About portrait and a purple accent on the bio. */
 #about figure img {
   border: 4px solid var(--teal);
   object-fit: cover;
@@ -93,7 +105,7 @@ main h2 {
   padding-left: 1.25rem;
 }
 
-/* Projects carousel */
+/* BEYOND CLASS: I centered the carousel and styled slide images and captions. */
 #projectCarousel {
   max-width: 900px;
   margin-left: auto;
@@ -105,6 +117,7 @@ main h2 {
   object-fit: cover;
 }
 
+/* I added a semi-transparent dark box so caption text stays readable over photos. */
 #projectCarousel .carousel-caption {
   background: rgba(0, 0, 0, 0.55);
   border-radius: 6px;
@@ -114,7 +127,7 @@ main h2 {
   bottom: 1.25rem;
 }
 
-/* Project cards: subtle lift on hover */
+/* I added a subtle lift and shadow when hovering project cards. */
 #project-cards .card {
   transition:
     transform 0.2s ease,
@@ -126,7 +139,7 @@ main h2 {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12) !important;
 }
 
-/* Contact form card */
+/* I wrapped the contact form in a white card with light shadow. */
 #contact-form {
   background: var(--white);
   padding: 1.5rem;
@@ -138,13 +151,14 @@ main h2 {
   display: none !important;
 }
 
+/* I styled the success alert with my teal palette (shown after valid form submit). */
 #form-feedback.alert-success {
   background-color: var(--light-teal);
   border-color: var(--teal);
   color: var(--white);
 }
 
-/* Keyboard focus for accessibility */
+/* I added visible orange focus outlines for keyboard navigation (accessibility). */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -153,6 +167,7 @@ textarea:focus-visible {
   outline-offset: 2px;
 }
 
+/* I removed the About bio left border on small screens where it looked cramped. */
 @media (max-width: 767px) {
   #about article {
     border-left: none;
@@ -161,13 +176,13 @@ textarea:focus-visible {
   }
 }
 
-/* Footer */
+/* I styled the site footer with a dark background and white text. */
 .site-footer {
   background-color: #1f2a33;
   color: var(--white);
 }
 
-/* jQuery: brief highlight when navigating via navbar */
+/* I defined this class for jquery-interactions.js — brief orange outline on nav click. */
 .section-nav-highlight {
   outline: 3px solid var(--orange);
   outline-offset: 4px;
