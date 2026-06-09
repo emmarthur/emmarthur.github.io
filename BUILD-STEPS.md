@@ -11,12 +11,12 @@ The final project **additional requirements** ask for Bootstrap elements **not c
 | Feature                                        | Meets “beyond class”?                                | Where                              | Step    |
 | ---------------------------------------------- | ---------------------------------------------------- | ---------------------------------- | ------- |
 | **Bootstrap accordion** (Previous Work)        | ✅ Yes                                               | `#workAccordion` in `index.html`   | 7       |
-| **Bootstrap carousel** (Projects)              | ✅ Yes — **primary video deep-dive**                 | `#projectCarousel` in `index.html` | 9–10    |
+| **Bootstrap carousel** (Projects)              | ✅ Yes                                               | `#projectCarousel` in `index.html` | 9–10    |
 | **Custom form validation** (`main.js`)         | General JS requirement (extends class form patterns) | `#contact-form` + `js/main.js`     | 11, 13  |
 | **Skip link**                                  | Removed from site (was Step 3)                       | —                                  | —       |
 | **Navbar, grid, cards, Bootstrap form markup** | From class / homework                                | Throughout                         | 2–6, 11 |
 
-Use the **carousel** as your main beyond-class explanation in the **video** (line-by-line comments in `index.html`, `css/styles.css`, and the Bootstrap JS script tag). Mention the accordion briefly; carousel is the deep dive.
+Use the accordion and carousel in your **journal and video** when explaining work that goes beyond the lab notebook.
 
 ---
 
