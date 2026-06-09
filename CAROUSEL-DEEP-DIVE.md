@@ -1,4 +1,4 @@
-# Bootstrap Carousel Deep Dive (`#projectCarousel`)
+﻿# Bootstrap Carousel Deep Dive (`#projectCarousel`)
 
 **Author:** Emmanuel Arthur  
 **Course:** CS 463/563 Final Project  
@@ -14,8 +14,8 @@ The lab notebook covered navbar, grid, cards, and forms. It did **not** cover th
 flowchart TB
   subgraph projects["#projects section"]
     heading[Section heading + intro]
-    carousel["#projectCarousel — BEYOND CLASS"]
-    cards["#project-cards — Bootstrap cards"]
+    carousel["#projectCarousel - BEYOND CLASS"]
+    cards["#project-cards - Bootstrap cards"]
   end
   heading --> carousel
   carousel --> cards
@@ -26,7 +26,7 @@ flowchart TB
 | HTML structure     | `index.html`     | `#projectCarousel` block inside `#projects`           |
 | Custom styling     | `css/styles.css` | `#projectCarousel` rules                              |
 | Slide behavior     | Bootstrap JS CDN | `bootstrap.bundle.min.js` at bottom of `index.html`   |
-| Custom slide logic | —                | **None** — I did not write carousel code in `main.js` |
+| Custom slide logic | -                | **None** - I did not write carousel code in `main.js` |
 
 The carousel shows the same three outside-course projects that appear as cards below it: Retail Impact Simulator, StainCheck, and Web Security Exploitation Suite.
 
@@ -43,16 +43,16 @@ Bootstrap provides the HTML pattern, CSS classes, and JavaScript plugin. I suppl
 
 ---
 
-## HTML structure — layers from outside to inside
+## HTML structure - layers from outside to inside
 
 ```mermaid
 flowchart TB
   outer["div#projectCarousel.carousel.slide"]
-  indicators["div.carousel-indicators — 3 dot buttons"]
+  indicators["div.carousel-indicators - 3 dot buttons"]
   inner["div.carousel-inner"]
-  slide1["div.carousel-item.active — Slide 1"]
-  slide2["div.carousel-item — Slide 2"]
-  slide3["div.carousel-item — Slide 3"]
+  slide1["div.carousel-item.active - Slide 1"]
+  slide2["div.carousel-item - Slide 2"]
+  slide3["div.carousel-item - Slide 3"]
   prev["button.carousel-control-prev"]
   next["button.carousel-control-next"]
   outer --> indicators
@@ -65,17 +65,17 @@ flowchart TB
   slide1 --> img1["img + carousel-caption"]
 ```
 
-### Outer wrapper — `div#projectCarousel`
+### Outer wrapper - `div#projectCarousel`
 
 | Attribute / class                          | What it does                                                                    |
 | ------------------------------------------ | ------------------------------------------------------------------------------- |
 | `id="projectCarousel"`                     | Unique name. All buttons use `data-bs-target="#projectCarousel"` to point here. |
 | `class="carousel slide"`                   | Bootstrap: this element is a carousel with slide animation.                     |
-| `class="mb-4"`                             | Bootstrap spacing — margin below the carousel.                                  |
+| `class="mb-4"`                             | Bootstrap spacing - margin below the carousel.                                  |
 | `data-bs-ride="carousel"`                  | Tells Bootstrap to start the carousel when `bootstrap.bundle.min.js` loads.     |
 | `aria-label="Project highlights carousel"` | Screen readers get a name for the slideshow region.                             |
 
-### Indicator dots — `div.carousel-indicators`
+### Indicator dots - `div.carousel-indicators`
 
 Three `<button>` elements, one per slide. Slides are numbered from **0**:
 
@@ -87,11 +87,11 @@ Three `<button>` elements, one per slide. Slides are numbered from **0**:
 
 The first dot has `class="active"` and `aria-current="true"` because slide 1 is shown when the page loads.
 
-### Slide container — `div.carousel-inner`
+### Slide container - `div.carousel-inner`
 
 Holds all slides. Bootstrap hides every slide except the one marked `active`.
 
-### Each slide — `div.carousel-item`
+### Each slide - `div.carousel-item`
 
 | Slide | Classes                | Image file                 | Caption title                   |
 | ----- | ---------------------- | -------------------------- | ------------------------------- |
@@ -101,9 +101,9 @@ Holds all slides. Bootstrap hides every slide except the one marked `active`.
 
 Inside each slide:
 
-- `<img class="d-block w-100">` — full-width image
-- `alt="..."` — describes the project for screen readers and when images fail to load
-- `div.carousel-caption.d-none.d-md-block` — title + description overlay; **hidden on phones**, visible on medium screens and up
+- `<img class="d-block w-100">` - full-width image
+- `alt="..."` - describes the project for screen readers and when images fail to load
+- `div.carousel-caption.d-none.d-md-block` - title + description overlay; **hidden on phones**, visible on medium screens and up
 
 ### Arrow buttons
 
@@ -149,7 +149,7 @@ sequenceDiagram
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 ```
 
-Without this file, the carousel would look like static images — arrows and dots would do nothing. The accordion and mobile navbar also depend on this same script.
+Without this file, the carousel would look like static images - arrows and dots would do nothing. The accordion and mobile navbar also depend on this same script.
 
 ---
 
@@ -160,7 +160,7 @@ Bootstrap styles the basic carousel. I added three rules so it fits my site desi
 ```mermaid
 flowchart LR
   subgraph css["My #projectCarousel CSS"]
-    A["max-width 900px — centered"]
+    A["max-width 900px - centered"]
     B["img max-height + object-fit cover"]
     C["caption dark background"]
   end
@@ -173,7 +173,7 @@ flowchart LR
 | `.carousel-item img { max-height: 400px; object-fit: cover; }` | All slides same height; crops instead of stretching | Consistent look when switching slides              |
 | `.carousel-caption { background: rgba(0,0,0,0.55); ... }`      | Dark semi-transparent box behind text               | White caption text stays readable on bright photos |
 
-On small screens, Bootstrap class `d-none d-md-block` hides captions so phones show images only — less clutter on a narrow screen.
+On small screens, Bootstrap class `d-none d-md-block` hides captions so phones show images only - less clutter on a narrow screen.
 
 ---
 
@@ -183,12 +183,12 @@ I show each project **twice** on purpose:
 
 ```mermaid
 flowchart LR
-  subgraph carousel["Carousel — slideshow"]
+  subgraph carousel["Carousel - slideshow"]
     C1[Slide 1]
     C2[Slide 2]
     C3[Slide 3]
   end
-  subgraph cards["Cards — grid"]
+  subgraph cards["Cards - grid"]
     K1[Card 1 + GitHub]
     K2[Card 2 + GitHub]
     K3[Card 3 + GitHub]
@@ -202,7 +202,7 @@ flowchart LR
 | ------------ | ------------------------- | ------------------------------- |
 | Purpose      | Visual highlight, rotates | Scannable detail + GitHub links |
 | Interaction  | Arrows and dots           | Click GitHub button             |
-| Beyond class | ✅ Yes — carousel         | From class — Bootstrap cards    |
+| Beyond class | Yes - carousel            | From class - Bootstrap cards    |
 
 ---
 
@@ -210,16 +210,16 @@ flowchart LR
 
 1. Opened https://emmarthur.github.io/ (or local `index.html` with internet for CDN).
 2. Scrolled to **Projects**.
-3. Clicked **next arrow** — slide 2 appeared.
-4. Clicked **dot 3** — Web Security slide appeared.
-5. Narrowed the browser — captions disappeared; arrows still worked.
+3. Clicked **next arrow** - slide 2 appeared.
+4. Clicked **dot 3** - Web Security slide appeared.
+5. Narrowed the browser - captions disappeared; arrows still worked.
 6. Confirmed images load from `images/` folder and alt text is present.
 
 ---
 
 ## What to say in the video (short script)
 
-> “For my beyond-class requirement I added a Bootstrap carousel in the Projects section. The lab notebook did not cover carousels — I used the Bootstrap docs to learn the markup.
+> “For my beyond-class requirement I added a Bootstrap carousel in the Projects section. The lab notebook did not cover carousels - I used the Bootstrap docs to learn the markup.
 >
 > The HTML has an outer `div` with id `projectCarousel`, three indicator dots, a `carousel-inner` with three `carousel-item` slides, and prev/next buttons. Each slide has an image and a caption.
 >
@@ -235,4 +235,4 @@ Full video timing and demo steps: `VIDEO-PRESENTATION-OUTLINE.md` Section 3.
 
 ## Outside source
 
-- [Bootstrap 5.3 — Carousel component](https://getbootstrap.com/docs/5.3/components/carousel/)
+- [Bootstrap 5.3 - Carousel component](https://getbootstrap.com/docs/5.3/components/carousel/)

@@ -13,7 +13,7 @@ Professional one-page portfolio for CS 463/563 Web Development. I built it with 
 
 No build step, npm install, or VS Code is required. This is a static site: open `index.html` in any modern browser.
 
-### Option 1 — View online (simplest)
+### Option 1 , View online (simplest)
 
 Open the deployed site in a browser:
 
@@ -21,16 +21,16 @@ Open the deployed site in a browser:
 
 No download, clone, or setup needed.
 
-### Option 2 — Run from a local folder (no Git, no VS Code)
+### Option 2 , Run from a local folder (no Git, no VS Code)
 
 With a local copy of the project files (USB, email, Canvas download, copied folder, etc.):
 
 1. Open the project folder (`emmarthur.github.io/`).
 2. Double-click **`index.html`**, or right-click it → **Open with** → Chrome, Edge, Firefox, or Safari.
 
-Bootstrap and jQuery load from CDN links in the HTML. An **internet connection** is required for full styling and interactivity. Keep the folder structure intact — `css/`, `js/`, and `images/` must stay next to `index.html`.
+Bootstrap and jQuery load from CDN links in the HTML. An **internet connection** is required for full styling and interactivity. Keep the folder structure intact , `css/`, `js/`, and `images/` must stay next to `index.html`.
 
-### Option 3 — Clone from GitHub (optional)
+### Option 3 , Clone from GitHub (optional)
 
 ```bash
 git clone https://github.com/emmarthur/emmarthur.github.io.git
@@ -39,7 +39,7 @@ cd emmarthur.github.io
 
 Then open `index.html` in a browser (Option 2). Cloning is optional for version history or pushing changes.
 
-### Option 4 — VS Code + Live Server (optional, for development)
+### Option 4 , VS Code + Live Server (optional, for development)
 
 VS Code with the **Live Server** extension can open `index.html` with auto-refresh while editing. Not required to view or grade the site.
 
@@ -82,7 +82,7 @@ I host this site on **GitHub Pages** from the public repo `emmarthur/emmarthur.g
 
 1. Edit files locally and commit: `git add .` → `git commit -m "message"`.
 2. Push to GitHub: `git push origin main`.
-3. GitHub Pages rebuilds automatically — refresh the live URL to see changes.
+3. GitHub Pages rebuilds automatically , refresh the live URL to see changes.
 
 There is no separate build or deploy command; GitHub serves `index.html` and static assets from the repo root.
 
@@ -90,8 +90,8 @@ There is no separate build or deploy command; GitHub serves `index.html` and sta
 
 - [Bootstrap 5.3.3](https://getbootstrap.com/) (CSS and JS via [jsDelivr](https://www.jsdelivr.com/) CDN)
 - [jQuery 3.7.1](https://jquery.com/) (CDN)
-- [Bootstrap Carousel docs](https://getbootstrap.com/docs/5.3/components/carousel/) — beyond-class component in Projects
-- [Bootstrap Accordion docs](https://getbootstrap.com/docs/5.3/components/accordion/) — beyond-class component in Previous Work
+- [Bootstrap Carousel docs](https://getbootstrap.com/docs/5.3/components/carousel/) , beyond-class component in Projects
+- [Bootstrap Accordion docs](https://getbootstrap.com/docs/5.3/components/accordion/) , beyond-class component in Previous Work
 - Project images from [Unsplash](https://unsplash.com/) (Unsplash License):
   - Retail: [checkout photo](https://unsplash.com/photos/0cfed4f6a45d)
   - StainCheck: [coffee spill](https://unsplash.com/photos/QQNQjrKEl6w)
@@ -100,7 +100,7 @@ There is no separate build or deploy command; GitHub serves `index.html` and sta
 ## Features
 
 - One-page layout: Navbar, About, Previous Work, Projects, Contact
-- Bootstrap accordion (Previous Work) and carousel (Projects) — beyond lab notebook
+- Bootstrap accordion (Previous Work) and carousel (Projects) , beyond lab notebook
 - Carousel deep-dive write-up: `CAROUSEL-DEEP-DIVE.md`
 - Custom contact form validation in `main.js`
 - jQuery section highlight on navbar clicks in `jquery-interactions.js`
