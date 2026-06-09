@@ -4,6 +4,39 @@ Tiny steps for rebuilding the final project website from scratch. You implement 
 
 Explanations below are written in plain language so each tag and attribute is easy to understand.
 
+## How to run the finished site (no VS Code required)
+
+The completed site is **static HTML**. You do not need VS Code, Live Server, npm, Node.js, or Git to view it.
+
+| Method               | What to do                                                                               |
+| -------------------- | ---------------------------------------------------------------------------------------- |
+| **View online**      | Open https://emmarthur.github.io/ in Chrome, Edge, Firefox, or Safari                    |
+| **Local folder**     | Double-click `index.html` in the project folder (File Explorer / Finder)                 |
+| **Clone (optional)** | `git clone https://github.com/emmarthur/emmarthur.github.io.git`, then open `index.html` |
+
+**Keep in mind:**
+
+- Bootstrap and jQuery load from CDN — use an **internet connection** for full styling and interactivity.
+- Do not move `index.html` out of the folder; `css/`, `js/`, and `images/` must stay beside it.
+- VS Code + Live Server is **optional** and only useful while editing files.
+
+See `README.md` for the same run instructions and deployment details.
+
+## Deployment (GitHub Pages)
+
+| Item              | Value                                            |
+| ----------------- | ------------------------------------------------ |
+| GitHub repository | https://github.com/emmarthur/emmarthur.github.io |
+| Live site         | https://emmarthur.github.io/                     |
+| Branch            | `main`                                           |
+| Pages folder      | `/ (root)`                                       |
+
+**First-time setup:** Repo → **Settings** → **Pages** → Source: **Deploy from a branch** → branch **`main`**, folder **`/ (root)`** → **Save**.
+
+**After code changes:** Commit locally, then `git push origin main`. GitHub Pages rebuilds in about one to two minutes. No build step required.
+
+---
+
 ## Beyond class vs. from class
 
 The final project **additional requirements** ask for Bootstrap elements **not covered in the lab notebook**. The instructions explicitly name the **accordion** and **image carousel** as examples.
@@ -573,8 +606,14 @@ Leave `css/styles.css` empty for now. The links still work; there is just nothin
 
 1. **Footer** — `<footer class="site-footer">` after `</main>` with copyright line.
 2. **jQuery** — CDN script plus `js/jquery-interactions.js` (orange outline flash on section when nav link clicked).
-3. **README.md** — Run instructions, structure, libraries, image credits, deploy URL, WAVE reminder.
+3. **README.md** — Project links, how to run (with and without VS Code/Git), deployment steps, libraries, image credits, WAVE reminder.
 4. **Deploy** — Push to `main`; enable GitHub Pages in repo Settings if not already on.
+
+**How to run (document in README):**
+
+- **Online:** https://emmarthur.github.io/ — no setup.
+- **Local folder:** double-click `index.html` — no VS Code required.
+- **Optional:** clone repo or use Live Server while developing.
 
 **Deploy checklist:**
 
@@ -582,6 +621,8 @@ Leave `css/styles.css` empty for now. The links still work; there is just nothin
 GitHub → emmarthur/emmarthur.github.io → Settings → Pages
 Source: Deploy from branch → main → / (root) → Save
 Live site: https://emmarthur.github.io/
+Repository: https://github.com/emmarthur/emmarthur.github.io
+Updates: git push origin main (rebuilds in ~1–2 minutes; no build command)
 ```
 
 **Check:** Reload locally—footer at bottom, click a nav link and watch the target section flash orange briefly. After push, open https://emmarthur.github.io/ and confirm the live site matches. This completes **Commit 6**.
